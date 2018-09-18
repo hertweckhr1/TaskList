@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskList</title>
+    <title>TasksList</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav>
+        <h1>TASKLIST</h1>
+        <sub>Add Task</sub>
+        <sub>All Tasks</sub>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <p>copywrite 2017</p>
+    </footer>
   </body>
 </html>

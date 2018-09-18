@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   height: 100%;
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(6, 1fr);
+   grid-template-rows: repeat(10, 1fr);
+   grid-template-areas:
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "n n b b b b"
+    "f f f f f f"
+  }
+
+  header {
+    grid-area: n;
+    background-color: lightgreen;
+  }
+
+  main {
+    grid-area: b;
+    background-color: gold;
+  }
+
+  footer {
+    grid-area: f;
+    background-color: lightblue;
+  }
+
+  nav sub {
+    display: block;
+    border: solid black 4px;
+    border-radius: 8px;
+    margin: 1em;
+    padding: 1em;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  main ol {
+    border: solid black 4px;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em;
+  }

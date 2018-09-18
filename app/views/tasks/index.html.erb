@@ -1,0 +1,10 @@
+<h1>Your Tasks</h1>
+<ol>
+  <% @tasks.each do |task| %>
+  <a href="/tasks/<%= task[:id] %>"><li><%= task[:title] %></li></a>
+    <ul>
+      <li><%= "Description: #{task[:description]}" %></li>
+      <li><%= "Completion Date: #{task[:completion_date]}" %></li>
+    </ul>
+  <% end %>
+</ol>
