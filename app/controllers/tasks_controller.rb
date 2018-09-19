@@ -19,9 +19,16 @@ class TasksController < ApplicationController
   end
 
   def new
+    @task = Task.new(title: '-No Task Name-', description: '-No Description-', completion_date: '-No Completion Date-')
   end
 
   def create
+    @task = Task.new(title: params[:task][:title], description: params[:task][:description], completion_date: params[:task][:completion_date])
+    if @task.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -29,6 +36,12 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find_by(id: params[:id].to_i)
+    if @task.update(title: params[:task][:title], description: params[:task][:description], completion_date: params[:task][:completion_date])
+      redirect_to task_path
+    else
+      render :find_by
+    end
   end
 
   def destroy
