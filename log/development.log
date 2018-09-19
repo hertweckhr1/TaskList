@@ -1293,3 +1293,131 @@ Processing by TasksController#show as HTML
 Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/tasks" for 127.0.0.1 at 2018-09-19 11:31:20 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hannahvanseeters/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."title" ASC[0m
+  ↳ app/views/tasks/index.html.erb:3
+  Rendered tasks/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 178ms (Views: 164.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/tasks/2" for 127.0.0.1 at 2018-09-19 11:31:24 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:14
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-09-19 11:31:25 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."title" ASC[0m
+  ↳ app/views/tasks/index.html.erb:3
+  Rendered tasks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-19 11:31:27 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-09-19 11:31:51 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."title" ASC[0m
+  ↳ app/views/tasks/index.html.erb:3
+  Rendered tasks/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-19 11:31:53 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-19 11:43:54 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"edit", :controller=>"tasks"}, missing required keys: [:id]:
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___2672506224071320898_70193813969340'
+
+Started POST "/__better_errors/187458af2bcab8ee/variables" for 127.0.0.1 at 2018-09-19 11:43:54 -0700
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-19 11:45:37 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"edit", :controller=>"tasks"}, missing required keys: [:id]:
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___2672506224071320898_70193823627860'
+
+Started POST "/__better_errors/ebd4d68a8af824ed/variables" for 127.0.0.1 at 2018-09-19 11:45:37 -0700
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-19 11:45:49 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected '<'
+      </nav>
+      ^
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:20: unknown regexp options - hadr
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+    <main>
+    ^
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:23: syntax error, unexpected '<', expecting ')'
+    </main>
+    ^
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:25: unknown regexp option - p
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:26: syntax error, unexpected '<'
+    </footer>
+    ^
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:27: unknown regexp options - bdy
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:28: syntax error, unexpected '<'
+</html>
+^
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:33: unterminated regexp meets end of file
+          end
+             ^
+/Users/hannahvanseeters/Documents/ada/rails/TaskList/app/views/layouts/application.html.erb:33: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^:
+  app/views/layouts/application.html.erb:19:in `'
+
+Started POST "/__better_errors/c6aaac62b49a0dd3/variables" for 127.0.0.1 at 2018-09-19 11:45:49 -0700
+Started GET "/tasks/new" for 127.0.0.1 at 2018-09-19 11:46:11 -0700
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-09-19 11:46:15 -0700
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."title" ASC[0m
+  ↳ app/views/tasks/index.html.erb:3
+  Rendered tasks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.4ms)
+
+
