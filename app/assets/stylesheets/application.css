@@ -33,43 +33,50 @@
     "f f f f f f"
   }
 
-  header {
-    grid-area: n;
-    background-color: lightgreen;
-  }
+header {
+  grid-area: n;
+  background-color: lightgreen;
+}
 
-  main {
-    grid-area: b;
-    border: solid black 4px;
-    border-radius: 8px;
-    padding: 1.5em;
-    margin: 2em;
-  }
+main {
+  grid-area: b;
+  border: solid black 4px;
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em;
+}
 
-  footer {
-    grid-area: f;
-    background-color: lightblue;
-    border: solid black 4px;
-  }
+footer {
+  grid-area: f;
+  background-color: lightblue;
+  border: solid black 4px;
+}
 
-  h1 {
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+}
 
-  nav sub {
-    display: block;
-    border: solid black 4px;
-    border-radius: 8px;
-    margin: 1em;
-    padding: 1em;
-    text-align: center;
-  }
+nav sub {
+  display: block;
+  border: solid black 4px;
+  border-radius: 8px;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+}
 
-  footer {
-    text-align: center;
-  }
+footer {
+  text-align: center;
+}
 
-  main ol {  
-    padding: 1em;
-    margin: 1em;
-  }
+main ol {
+  padding: 1em;
+  margin: 1em;
+}
+
+sub {
+  color: green;
+}
+
+
+.row input:checked + span {text-decoration: line-through}

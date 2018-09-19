@@ -1,10 +1,14 @@
 <h1>Your Tasks</h1>
 <ol>
   <% @tasks.each do |task| %>
-  <li><%=link_to task.title, task_path(task.id) %></li>
+  <li class="row"><input type="checkbox"><span><%=link_to task.title, task_path(task.id) %></span></li>
     <ul>
       <li><%= "Description: #{task.description}" %></li>
       <li><%= "Completion Date: #{task.completion_date}" %></li>
+      <p class "task_actions">
+        <sub><%= link_to 'Edit |', edit_task_path(task.id) %></sub>
+        <sub><%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: "Are you sure?"} %></sub>
+      </p>
     </ul>
   <% end %>
 </ol>

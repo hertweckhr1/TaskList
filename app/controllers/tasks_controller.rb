@@ -45,5 +45,17 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find_by(id: params[:id].to_i)
+    if @task.delete
+      redirect_to tasks_path
+    else
+      render :find_by
+    end
+  end
+
+  def complete
+    Task.where(id: params[:id]).update(completion_date: Time.now)
+
+    redirect_to tasks_path
   end
 end
