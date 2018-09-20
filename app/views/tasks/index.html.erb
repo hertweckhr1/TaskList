@@ -1,10 +1,10 @@
 <h1>Your Tasks</h1>
 <ol>
   <% @tasks.each do |task| %>
-  <% if task[:completion_date].class == String %>
-    <li class="strike"><%=link_to task.title, task_path(task.id)%></li>
-  <% else %>
+  <% if task[:completion_date] == nil %>
     <li class="blank"><%=link_to task.title, task_path(task.id)%></li>
+  <% else %>
+    <li class="strike"><%=link_to task.title, task_path(task.id)%></li>
   <% end %>
 
 
