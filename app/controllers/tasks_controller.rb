@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(title: params[:task][:title], description: params[:task][:description], completion_date: params[:task][:completion_date])
     if @task.save
-      redirect_to root_path
+      redirect_to tasks_path
     else
       render :new
     end
@@ -54,8 +54,13 @@ class TasksController < ApplicationController
   end
 
   def complete
-    Task.where(id: params[:id]).update(completion_date: Time.now)
-
+    @task = Task.find_by(id: params[:id].to_i)
+    if @task.completion_date.class == String
+      @task.update(completion_date: nil)
+    else
+      @task.update(completion_date: Date.today )
+    end
     redirect_to tasks_path
+
   end
 end

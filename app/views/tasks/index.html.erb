@@ -1,11 +1,25 @@
 <h1>Your Tasks</h1>
 <ol>
   <% @tasks.each do |task| %>
-  <li class="row"><input type="checkbox"><span><%=link_to task.title, task_path(task.id) %></span></li>
+  <% if task[:completion_date].class == String %>
+    <li class="strike"><%=link_to task.title, task_path(task.id)%></li>
+  <% else %>
+    <li class="blank"><%=link_to task.title, task_path(task.id)%></li>
+  <% end %>
+
+
     <ul>
+
       <li><%= "Description: #{task.description}" %></li>
       <li><%= "Completion Date: #{task.completion_date}" %></li>
       <p class "task_actions">
+        <% if task[:completion_date].class == String %>
+          <sub><%= link_to 'Unmark Completed |', complete_task_path(task.id), method: :patch %></sub>
+        <% else %>
+          <sub><%= link_to 'Completed |', complete_task_path(task.id), method: :patch %></sub>
+        <% end %>
+
+
         <sub><%= link_to 'Edit |', edit_task_path(task.id) %></sub>
         <sub><%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: "Are you sure?"} %></sub>
       </p>

@@ -79,4 +79,6 @@ sub {
 }
 
 
-.row input:checked + span {text-decoration: line-through}
+.strike {
+  text-decoration: line-through
+}
